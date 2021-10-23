@@ -125,6 +125,21 @@ public class doComms implements Runnable, Constants {
             System.out.println("serviceName: " + serviceName);
 
             switch (serviceName){
+                case FETCH_CUST_DTLS_RETAIL:{
+                    logger.info("Welcome To Fetch Retail Customer Details call");
+                    sendFinacleFiRequest(request,LoadProp.finacleProdFiUrl,LoadProp.fetchCustomerDetailsRetailAppCode);
+                    break;
+                }
+                case FETCH_ACCOUNT_BALANCE_DETAILS:{
+                    logger.info("Welcome to Fetch Account Balance details api call");
+                    sendFinacleFiRequest(request,LoadProp.finacleProdFiUrl,LoadProp.fetchAccountBalanceAppcode);
+                    break;
+                }
+                case FETCH_BVN:{
+                    logger.info("Welcome To Fetch Bvn api call");
+                    sendSoapRequest(request,LoadProp.fetchBvnUrl,LoadProp.fetchBvnAction);
+                    break;
+                }
                 case FREEZE_UNFREEZE_ACCT:{
                     logger.info("Welcome To Freeze Unfreeze Acct api call");
                     sendFinacleFiRequest(request,LoadProp.finacleProdFiUrl,LoadProp.freezeUnfreezeAcctAppCode);

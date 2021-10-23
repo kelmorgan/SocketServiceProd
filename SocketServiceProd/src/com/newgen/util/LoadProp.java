@@ -16,6 +16,7 @@ public class LoadProp implements Constants {
     public static String tokenAuthenticationUrl;
     public static String fetchAccountBvnUrl;
     public static String fetchLegacyAccountUrl;
+    public static String fetchBvnUrl;
 
     public static String postAppCode;
     public static String removeLienAppCode;
@@ -33,12 +34,17 @@ public class LoadProp implements Constants {
     public static String placeLienAppCode;
     public static String freezeAccountAppCode;
     public static String freezeUnfreezeAcctAppCode;
+    public static String fetchAccountBalanceAppcode;
+    public static String fetchCustomerDetailsRetailAppCode;
+
+
 
 
     public static String tokenAuthenticationAction;
     public static String bvnAction;
     public static String fetchLegacyAccountAction;
     public static String fetchInternalAccountAction;
+    public static String fetchBvnAction;
     static {
         try {
             Properties properties = new Properties();
@@ -55,6 +61,9 @@ public class LoadProp implements Constants {
             tokenAuthenticationUrl= properties.getProperty(TOKENAUTHENTICATIONURL);
             fetchAccountBvnUrl= properties.getProperty(ACCOUNTBVNURL);
             fetchLegacyAccountUrl= properties.getProperty(LEGACYACCOUNTURL);
+            fetchBvnUrl= properties.getProperty(FETCHBVNURL);
+
+
 
             //AppCode
             postAppCode = properties.getProperty(FINACLE_POSTING_APPCODE);
@@ -73,6 +82,9 @@ public class LoadProp implements Constants {
             placeLienAppCode = properties.getProperty(PLACE_LIEN_APPCODE);
             freezeAccountAppCode = properties.getProperty(FREEZE_ACCOUNT_APPCODE);
             freezeUnfreezeAcctAppCode = properties.getProperty(FREEZE_UNFREEZE_ACCT_APPCODE);
+            fetchAccountBalanceAppcode = properties.getProperty(ACCOUNT_BALANCE_DETAILS_APPCODE);
+            fetchCustomerDetailsRetailAppCode= properties.getProperty(CUSTOMER_DTL_RETAIL_APPCODE);
+
 
 
             //Soap Action
@@ -80,6 +92,8 @@ public class LoadProp implements Constants {
             bvnAction = properties.getProperty(BVNACTION);
             fetchLegacyAccountAction= properties.getProperty(LEGACYACCOUNTACTION);
             fetchInternalAccountAction = properties.getProperty(INTERNALACCOUNTACTION);
+            fetchBvnAction = properties.getProperty(FETCHBVNACTION);
+
 
         }
         catch (IOException e){
